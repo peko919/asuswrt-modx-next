@@ -846,7 +846,9 @@ define platformKernelConfig
 		sed -i "/CONFIG_MBSS_SUPPORT/d" $(1); \
 		echo "CONFIG_MBSS_SUPPORT=y" >>$(1); \
 		sed -i "/CONFIG_APCLI_SUPPORT/d" $(1); \
-		echo "# CONFIG_APCLI_SUPPORT is not set" >>$(1); \
+        echo "CONFIG_APCLI_SUPPORT=y" >>$(1); \
+		sed -i "/CONFIG_MAC_REPEATER_SUPPORT/d" $(1); \
+		echo "CONFIG_MAC_REPEATER_SUPPORT=y" >>$(1); \
 		sed -i "/CONFIG_NINTENDO_AP/d" $(1); \
 		echo "# CONFIG_NINTENDO_AP is not set" >>$(1); \
 		sed -i "/CONFIG_COC_SUPPORT/d" $(1); \
